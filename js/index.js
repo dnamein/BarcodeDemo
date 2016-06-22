@@ -53,7 +53,17 @@ var app = {
 
     scan: function() {
         console.log('scanning');
-        
+        if (window.cordova) {
+						alert('window.cordova is available');
+					} else {
+						alert('window.cordova NOT available');
+					}
+
+				if (window.cordova && window.cordova.plugins) {
+					alert('window.cordova.plugins is available');
+				} else {
+					alert(cordova.plugins);
+				}
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
         scanner.scan( function (result) { 
